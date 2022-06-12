@@ -1,0 +1,128 @@
+.boxWidth {
+  width: 20% !important;
+  height: 20% !important;
+}
+.button {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.city {
+  margin-right: 5px;
+  font-size: 35px;
+  font-weight: bold !important;
+  font-family: "Lobster", cursive;
+  font-family: "Noto Serif", serif;
+  margin-bottom: 0% !important;
+  padding-bottom: 0% !important;
+}
+.main-date {
+  font-size: 18px;
+  margin-top: 0% !important;
+  padding-top: 0% !important;
+  font-weight: lighter;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" -25, "opsz" 48;
+}
+#cityName {
+  font-size: 28px;
+}
+img {
+  position: relative;
+  right: 10px;
+  top: 10px;
+  filter: drop-shadow(5px 5px 5px rgb(75, 79, 102));
+}
+p {
+  font-size: 24px;
+}
+.main-data {
+  font-size: 20px;
+  text-shadow: 2px 2px #657781;
+  color: #fff;
+  filter: grayscale(10%);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.main-data:hover {
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transform: translateZ(0) scale(1.05) perspective(1000px);
+  transform: translateZ(0) scale(1.05) perspective(1000px);
+  float: left;
+  box-shadow: 5px 5px 20px #9fb0bd;
+}
+.secondary-data {
+  background: linear-gradient(69.9deg, rgb(63, 66, 92) 3.2%, #222831);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.sunny {
+  padding-bottom: 20px;
+}
+#fahrenheit:hover {
+  color: #b1bdc5;
+  cursor: pointer;
+}
+#celsius:hover {
+  cursor: pointer;
+  color: #b1bdc5;
+}
+.temperature {
+  padding: 0;
+  margin-top: 30px;
+  padding-bottom: 0px;
+  font-size: 30px;
+}
+.material-symbols-outlined-cloudy-thunder-rain {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+.weather-days {
+  background-image: var(--bs-gradient);
+  border-radius: 20%;
+  text-align: center;
+}
+.weather-days:hover {
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transform: translateZ(0) scale(1.1) perspective(1000px);
+  transform: translateZ(0) scale(1.1) perspective(1000px);
+  float: top;
+  background: #fff;
+  color: #222831;
+}
+.button-change {
+  background-color: rgba(97, 163, 255);
+  border-radius: 5px;
+  border: 1px solid #f7fcff;
+  box-shadow: rgba(162, 187, 204, 0.7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.button-current {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  border: 1px solid #f7fcff;
+  box-shadow: rgba(162, 187, 204, 0.7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.button-change:hover {
+  color: rgb(255, 255, 255);
+  background-color: #b6e2ff;
+  box-shadow: 1px 1px 5px #9fb0bd;
+}
+.button-current:hover {
+  color: rgb(255, 255, 255);
+  background-color: #b1bdc5;
+  box-shadow: 1px 1px 5px #9fb0bd;
+}
+
