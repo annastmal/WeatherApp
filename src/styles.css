@@ -1,6 +1,6 @@
 .boxWidth {
-  width: 20% !important;
-  height: 20% !important;
+  width: 20% ;
+  height: 20% ;
 }
 .button {
   display: block;
@@ -10,16 +10,16 @@
 .city {
   margin-right: 5px;
   font-size: 35px;
-  font-weight: bold !important;
+  font-weight: bold ;
   font-family: "Lobster", cursive;
   font-family: "Noto Serif", serif;
-  margin-bottom: 0% !important;
-  padding-bottom: 0% !important;
+  margin-bottom: 0% ;
+  padding-bottom: 0% ;
 }
 .main-date {
   font-size: 18px;
-  margin-top: 0% !important;
-  padding-top: 0% !important;
+  margin-top: 0%;
+  padding-top: 0% ;
   font-weight: lighter;
 }
 .material-symbols-outlined {
