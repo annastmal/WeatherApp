@@ -1,12 +1,3 @@
-function onStart() {
-  let button = document.querySelector("#currentPosition");
-  button.addEventListener("click", getCurrentCity);
-}
-
-function getCurrentCity() {
-  navigator.geolocation.getCurrentPosition(getTempOfLocation);
-}
-
 function currentDate(now = new Date()) {
   let date = now.getDate();
   let time = now.getHours();
@@ -43,17 +34,31 @@ function currentDate(now = new Date()) {
   mainDate.innerHTML = `${date} ${month}  ${time}:${minutes}`;
 }
 
-onStart();
-currentDate();
+function getCurrentCity() {
+  navigator.geolocation.getCurrentPosition(getTempOfLocation);
+}
 
 function showTemperature(response) {
-  console.log(response);
+  console.log(response.data);
   let temperatureElement = document.querySelector("#tempNumber");
   let temp = Math.round(response.data.main.temp);
   let city = document.querySelector("#cityName");
   city.innerHTML = response.data.name;
   temperatureElement.innerHTML = ` ${temp}`;
-}
+  let currentWeather = document.querySelector("#currentWeather");
+  currentWeather.innerHTML = response.data.weather[0].main;
+  let humidity = document.querySelector("#humidity");
+  let hum = Math.round(response.data.main.humidity);
+  humidity.innerHTML = `${hum} %`;
+  let wind = document.querySelector("#wind");
+  let speed = Math.round(response.data.wind.speed);
+  wind.innerHTML = `${speed} m/s`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    celTemp = response.data.main.temp;
+  }
 
 function getTempOfCity(city) {
   let apiKey = "916448310e3a306ffba91ecebe45fae4";
@@ -73,3 +78,29 @@ function searchCity(event) {
   const city = event.inputCity.value;
   getTempOfCity(city);
 }
+
+function onStart() {
+  let button = document.querySelector("#currentPosition");
+  button.addEventListener("click", getCurrentCity);
+  currentDate();
+  const location = getCurrentCity();
+  getTempOfLocation(location);
+}
+function showFahTemp(event) {
+  event.preventDefault();
+  let fahTemp= (celTemp * 9)/5 + 32;
+   let temperatureElement = document.querySelector("#tempNumber");
+   temperatureElement.innerHTML =Math.round( fahTemp);
+  
+}
+let fah = document.querySelector("#fahrenheit");
+fah.addEventListener("click", showFahTemp);
+function showCelTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#tempNumber");
+   temperatureElement.innerHTML = Math.round(celTemp);
+}
+let cel = document.querySelector("#celsius");
+cel.addEventListener("click", showCelTemp);
+onStart();
+getTempOfCity( "Lviv");
