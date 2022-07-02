@@ -82,12 +82,12 @@ p {
 .material-symbols-outlined-cloudy-thunder-rain {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
-.weather-days {
+.weather-forecast {
   background-image: var(--bs-gradient);
   border-radius: 20%;
   text-align: center;
 }
-.weather-days:hover {
+.weather-forecast:hover {
   transition: transform 300ms ease;
   transition: transform 300ms ease, -webkit-transform 300ms ease;
   -webkit-transform: translateZ(0) scale(1.1) perspective(1000px);
@@ -120,6 +120,7 @@ p {
   margin-top: 20px;
   margin-left: 20px;
 }
+
 .button-change:hover {
   color: rgb(255, 255, 255);
   background-color: #b6e2ff;

@@ -56,10 +56,38 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    celTemp = response.data.main.temp;
-  }
-
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  celTemp = response.data.main.temp;
+  
+}
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = ` <div class="d-flex row-12 p-2 ">`;
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class=" boxWidth container  p-3  border weather-forecast">
+    <div >
+      <span class="material-symbols-outlined">
+        sunny
+      </span>   
+        <div >
+          ${day}
+        </div>
+            <div >
+                 30°C
+            </div>
+     </div>
+     </div>
+     `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
 function getTempOfCity(city) {
   let apiKey = "916448310e3a306ffba91ecebe45fae4";
   let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
@@ -88,19 +116,18 @@ function onStart() {
 }
 function showFahTemp(event) {
   event.preventDefault();
-  let fahTemp= (celTemp * 9)/5 + 32;
-   let temperatureElement = document.querySelector("#tempNumber");
-   temperatureElement.innerHTML =Math.round( fahTemp);
-  
+  let fahTemp = (celTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#tempNumber");
+  temperatureElement.innerHTML = Math.round(fahTemp);
 }
 let fah = document.querySelector("#fahrenheit");
 fah.addEventListener("click", showFahTemp);
 function showCelTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#tempNumber");
-   temperatureElement.innerHTML = Math.round(celTemp);
+  temperatureElement.innerHTML = Math.round(celTemp);
 }
 let cel = document.querySelector("#celsius");
 cel.addEventListener("click", showCelTemp);
 onStart();
-getTempOfCity( "Lviv");
+getTempOfCity("Lviv");
