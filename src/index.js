@@ -45,7 +45,7 @@ function showTemperature(response) {
   city.innerHTML = response.data.name;
   temperatureElement.innerHTML = ` ${temp}`;
   let currentWeather = document.querySelector("#currentWeather");
-  currentWeather.innerHTML = response.data.weather[0].main;
+  currentWeather.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector("#humidity");
   let hum = Math.round(response.data.main.humidity);
   humidity.innerHTML = `${hum} %`;

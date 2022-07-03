@@ -108,7 +108,7 @@ p {
   color: #222831;
 }
 .button-change {
-  background-color: rgba(97, 163, 255);
+  background-color: #2A859F;
   border-radius: 5px;
   border: 1px solid #f7fcff;
   box-shadow: rgba(162, 187, 204, 0.7) 0 1px 0 0 inset;
@@ -120,7 +120,7 @@ p {
   margin-left: 20px;
 }
 .button-current {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #EC6E4B;
   border-radius: 5px;
   border: 1px solid #f7fcff;
   box-shadow: rgba(162, 187, 204, 0.7) 0 1px 0 0 inset;
@@ -138,7 +138,7 @@ p {
   box-shadow: 1px 1px 5px #9fb0bd;
 }
 .button-current:hover {
-  color: rgb(255, 255, 255);
-  background-color: #b1bdc5;
+  color: #ffffff;
+  background-color: #f9a696;
   box-shadow: 1px 1px 5px #9fb0bd;
 }
