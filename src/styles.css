@@ -32,6 +32,12 @@
 #cityName {
   font-size: 28px;
 }
+
+.clouds {
+  background-image: url("https://images.pexels.com/photos/1227513/pexels-photo-1227513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+}
+
+
 .main-img {
   position: relative;
   right: 10px;
@@ -47,6 +53,8 @@ p {
   color: #fff;
   filter: grayscale(10%);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-repeat: no-repeat;
+  background-size: 700px;
 }
 .main-data:hover {
   transition: transform 300ms ease;

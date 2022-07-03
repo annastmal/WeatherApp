@@ -39,7 +39,6 @@ function getCurrentCity() {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#tempNumber");
   let temp = Math.round(response.data.main.temp);
   let city = document.querySelector("#cityName");
@@ -61,8 +60,9 @@ function showTemperature(response) {
   celTemp = response.data.main.temp;
   getForecast(response.data.coord);
 }
+
 function displayForecast(response) {
-  console.log(response);
+  let weatherDesc = response.data.current.weather[0].main;
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = ` <div class="d-flex row-12 p-2 ">`;
@@ -97,6 +97,8 @@ function displayForecast(response) {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+  setWeatherImage(weatherDesc);
+
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -117,7 +119,6 @@ function getTempOfLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
-getTempOfCity("Lviv");
 
 function searchCity(event) {
   const city = event.inputCity.value;
@@ -128,28 +129,13 @@ function onStart() {
   let button = document.querySelector("#currentPosition");
   button.addEventListener("click", getCurrentCity);
   let fah = document.querySelector("#fahrenheit");
-  fah.addEventListener("click", showFahTemp);
+  getTempOfCity("Lviv");
   currentDate();
   const location = getCurrentCity();
   getTempOfLocation(location);
-  displayForecast();
-}
-function showFahTemp(event) {
-  event.preventDefault();
-  let fahTemp = (celTemp * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#tempNumber");
-  temperatureElement.innerHTML = Math.round(fahTemp);
 }
 
-function showCelTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#tempNumber");
-  temperatureElement.innerHTML = Math.round(celTemp);
-  let cel = document.querySelector("#celsius");
-  cel.addEventListener("click", showCelTemp);
-}
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then((res) => displayForecast(res));
